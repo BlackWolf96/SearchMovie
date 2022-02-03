@@ -47,6 +47,11 @@ header{
       justify-content: center;
       gap:20px;
     }
+    a{
+      text-transform: uppercase;
+      text-decoration: none;
+      color:white;
+    }
   }
 }
 </style>
