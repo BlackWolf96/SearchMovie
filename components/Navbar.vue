@@ -40,7 +40,7 @@ header{
     }
     @media only screen and (min-width:600px){
       display:flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
       gap:20px;
