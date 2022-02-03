@@ -29,9 +29,13 @@ header{
   height:10em;
   background-color: green;
 
-  @media only screen and (max-width:600px){
+  nav{
+    @media only screen and (max-width:600px){
+    }
+    @media only screen and (min-width:600px){
+    }
   }
-  @media only screen and (min-width:600px){
-  }
+
+  
 }
 </style>
