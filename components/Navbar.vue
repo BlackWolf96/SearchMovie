@@ -39,6 +39,8 @@ header{
       gap:20px;
     }
     @media only screen and (min-width:600px){
+      position: absolute;
+      right:20px;
       display:flex;
       flex-direction: row;
       align-items: center;
