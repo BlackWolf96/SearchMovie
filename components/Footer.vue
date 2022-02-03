@@ -1,13 +1,18 @@
 <template>
-  
+  <footer>
+    Copyright &copy; 2022
+  </footer>
 </template>
 
 <script>
 export default {
-
+  name: 'FooterComponent'
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+footer{
+  width:100%;
+  height:10em;
+}
 </style>
