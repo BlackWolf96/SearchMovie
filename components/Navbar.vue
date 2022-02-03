@@ -27,23 +27,11 @@ export default {
 header{
   width:100%;
   height:10em;
-
+  background-color: green;
 
   @media only screen and (max-width:600px){
-    nav{
-      height:10em;
-      display:flex;
-      flex-direction: column;
-      a{ text-decoration: none; color:white; }
-    }
   }
   @media only screen and (min-width:600px){
-    nav{
-      height:10em;
-      display:flex;
-      flex-direction: row;
-      a{ text-decoration: none; color:white; }
-    }
   }
 }
 </style>
