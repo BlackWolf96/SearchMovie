@@ -30,12 +30,16 @@ header{
   background-color: green;
 
   nav{
+    height:10em;
     @media only screen and (max-width:600px){
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap:20px;
     }
     @media only screen and (min-width:600px){
     }
   }
-
-  
 }
 </style>
