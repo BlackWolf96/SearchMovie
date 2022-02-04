@@ -1,5 +1,8 @@
 <template>
-  <navbar />
+<div>
+  <Navbar />
+  <Search />
+</div>
 </template>
 
 <script>
