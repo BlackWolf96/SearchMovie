@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueSlickCarousel :arrows="true" :dots="true">
+    <VueSlickCarousel :arrows="false" :dots="true">
       <div><img src="~/static/ssd.png"></div>
       <div><img src="~/static/ssd.png"></div>
       <div><img src="~/static/ssd.png"></div>

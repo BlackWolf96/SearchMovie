@@ -16,7 +16,7 @@
       nothing there
     </div>
     -->
-    <div class="container-box spacer">
+    <div v-if="results" class="container-box spacer">
       <div class="results p1">
         <div class="item"></div>
       </div>
