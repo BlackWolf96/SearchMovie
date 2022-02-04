@@ -79,7 +79,7 @@ $btn-hover: rgba(0,0,0, 0.7);
     gap:5%;
     .results{
       width:70%;
-      div{
+      .item{
         width:90%;
         height:100px;
         box-shadow: 1px 2px 2px grey;
