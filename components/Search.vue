@@ -4,18 +4,6 @@
       <input type="search" name="" id="">
       <button>Search</button>
     </div>
-    <!--
-    <div class="results spacer" v-if="results != ''">
-      <div class="container" v-for="result in results" :key="result.id">
-        <div class="img">{{ result.img }}</div>
-        <div class="title">{{ result.title }}</div>
-        <div class="description">{{ result.description }}</div>
-      </div>
-    </div>
-    <div class="result spacer" v-else>
-      nothing there
-    </div>
-    -->
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
         <div class="item"></div>
