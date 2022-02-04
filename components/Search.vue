@@ -22,7 +22,6 @@ $btn-hover: rgba(0,0,0, 0.7);
 .wrapper{
   display: flex;
   flex-direction: column;
-  
   .container{
     input{
       width:250px;
