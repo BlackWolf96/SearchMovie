@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="container">
       <input type="search" name="" id="">
       <button>Search</button>
