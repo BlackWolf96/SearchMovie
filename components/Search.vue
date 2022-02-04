@@ -6,7 +6,9 @@
     </div>
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
-        <div class="item"></div>
+        <div v-for="result in results" :key="result.id" class="item">
+         <div>{{ result.img }}</div> 
+        </div>
       </div>
       <div class="slider p1">d</div>
     </div>
