@@ -7,7 +7,9 @@
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
         <div v-for="result in results" :key="result.id" class="item">
-         <div>{{ result.img }}</div>
+          <div>{{ result.img }}</div>
+          <div>{{ result.title }}</div>
+          <div>{{ result.description }}</div>
         </div>
       </div>
       <div class="slider p1">d</div>
@@ -70,15 +72,17 @@ $btn-hover: rgba(0,0,0, 0.7);
     .results{
       width:70%;
       .item{
+        margin-top:25px;
         width:90%;
         height:100px;
-        box-shadow: 1px 2px 2px grey;
+        box-shadow: 2px 2px 6px grey;
       }
     }
     .slider{
+      margin-top:25px;
       width:25%;
       height:100px;
-      background-color: red;
+      box-shadow: 2px 2px 6px grey;
     }
   }
 }
