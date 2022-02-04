@@ -5,6 +5,7 @@
     <div class="">
       Description here
     </div>
+    <Search />
   </div>
 </template>
 
