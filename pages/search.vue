@@ -10,7 +10,3 @@ export default {
   name: 'searchpage'
 }
 </script>
-
-<style>
-
-</style>
