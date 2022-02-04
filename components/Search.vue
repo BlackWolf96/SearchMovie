@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="container">
+    <div class="container spacer">
       <input type="search" name="" id="">
       <button>Search</button>
     </div>
@@ -22,6 +22,8 @@ $btn-hover: rgba(0,0,0, 0.7);
 .wrapper{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   .container{
     input{
       width:250px;
@@ -29,16 +31,18 @@ $btn-hover: rgba(0,0,0, 0.7);
       border-style:none;
       border-bottom: 1px solid black;
     }
+    input:focus{
+        outline: none;
+      }
     button{
       width:100px;
       height:40px;
       background-color: black;
       border-color:black;
       color:white;
-    }
-    button:hover{
-      background-color: $btn-hover;
-      border-color: $btn-hover;
+      :hover{
+        background-color: $btn-hover;
+      }
     }
   }
   .results{
