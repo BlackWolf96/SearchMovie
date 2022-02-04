@@ -1,0 +1,16 @@
+<template>
+  <div>
+    <Navbar />
+    <Search />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'searchpage'
+}
+</script>
+
+<style>
+
+</style>
