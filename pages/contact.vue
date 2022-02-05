@@ -3,9 +3,11 @@
     <Navbar />
     <div class="space flex">
       <div class="item display-column p2">
-        <input class="input" type="email" v-model="email" placeholder="Email">
-        <textarea placeholder="Message..." v-model="message"></textarea>
-        <button class="btn btn-black" @click="sendMSG">Send</button>
+        <input v-model="email" class="input" type="email" placeholder="Email">
+        <textarea v-model="message" placeholder="Message..." />
+        <button class="btn btn-black" @click="sendMSG">
+          Send
+        </button>
         <span v-if="error">{{ error }}</span>
       </div>
       <div class="item p2 justify">
@@ -27,10 +29,11 @@ export default {
     }
   },
   methods: {
-    sendMSG () {
+    sendMSG (e) {
       console.log(this.email)
       console.log(this.message)
       this.error = 'This message will be send'
+      e.preventDefault()
     }
   }
 }

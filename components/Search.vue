@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="container spacer">
-      <input type="search" name="" id="">
-      <button>Search</button>
+      <input v-model="search" type="search" name="" id="">
+      <button @click="searchMethod" class="btn btn-black">Search</button>
     </div>
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
@@ -22,6 +22,7 @@ export default {
   name: 'SearchComponent',
   data () {
     return {
+      search: null,
       results: [
         { img: '/static/ssd.png', title: 's', description: 's' },
         { img: '~/static/w.jpg', title: 's', description: 's' },
@@ -29,6 +30,11 @@ export default {
         { img: '~/static/w.jpg', title: 's', description: 's' },
         { img: '~/static/w.jpg', title: 's', description: 's' }
       ]
+    }
+  },
+  methods: {
+    searchMethod () {
+      console.log(this.search)
     }
   }
 }
@@ -50,16 +56,6 @@ $btn-hover: rgba(0,0,0, 0.7);
       border-bottom: 1px solid black;
       &:hover{
         outline: none;
-      }
-    }
-    button{
-      width:100px;
-      height:40px;
-      background-color: black;
-      border-color:black;
-      color:white;
-      &:hover{
-        background-color: $btn-hover;
       }
     }
   }
