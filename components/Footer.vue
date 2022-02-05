@@ -14,5 +14,6 @@ export default {
 footer{
   width:100%;
   height:10em;
+  background-color: green;
 }
 </style>

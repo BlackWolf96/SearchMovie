@@ -10,14 +10,66 @@ body{
   &1{
     padding:10px;
   }
+  &2{
+    padding:15px; 
+  }
+}
+.space{
+  margin-top: 100px;
+  margin-bottom:100px;
 }
 .flex{
   @media only screen and (max-width:600px){
     display: flex;
     flex-direction: column;
+    .item{
+      width:100%;
+      min-height:100px;
+    }
   }
   @media only screen and (min-width:600px){
     display: flex;
     flex-direction: row;
+    .item{
+      width:50%;
+      min-height:500px;
+    }
   }
+}
+
+.div-space{
+  margin-top:100px;
+  margin-bottom: 100px;
+}
+.div-size{
+  width:50%;
+}
+.display-row{
+  display: flex;
+  flex-direction: row;
+}
+.display-column{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+.btn{
+  width:100px;
+  height:40px;
+  &-black{
+    background-color: black;
+    color:white;
+  }
+}
+.input{
+  width:450px;
+  height:40px;
+}
+textarea{
+  width:450px;
+  height:100px;
+}
+.justify{
+  text-justify: justify;
+  word-break: break-all;
 }
