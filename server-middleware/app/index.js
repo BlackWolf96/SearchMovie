@@ -34,7 +34,7 @@ myapp.get('/about', (req, res) => {
 myapp.get('/about', (req, res) => {
   res.send('this is about')
 })
-myapp.post('/about', (req, res) => {
+myapp.post('/contact', (req, res) => {
   res.send('this is about')
 })
 myapp.listen(port, () => {
