@@ -40,6 +40,9 @@ export default {
       if (!this.search) {
         this.error.push('This label cannot be empty')
       }
+      if (!this.error.length) {
+        return true
+      }
       e.preventDefault()
     }
   }
