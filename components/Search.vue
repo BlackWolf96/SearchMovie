@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="container spacer">
       <input v-model="search" type="search" placeholder="Search,,,">
-      <button class="btn btn-black" @click="searchMethod">
+      <button class="btn btn-black" @click="searchMethod" @submit="submitData">
         Search
       </button>
       <div v-if="error.length">
@@ -51,6 +51,18 @@ export default {
         return true
       }
       e.preventDefault()
+    },
+    submitData () {
+      console.log('eo')
+      axios.push('/sssearch', {
+        data: this.search
+      })
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }
