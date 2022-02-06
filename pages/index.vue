@@ -2,10 +2,10 @@
   <div>
     <Navbar />
     <Slider />
-    <div class="">
+    <div class="justify div-space p2">
       Description here
     </div>
-    <Search />
+    <Footer />
   </div>
 </template>
 

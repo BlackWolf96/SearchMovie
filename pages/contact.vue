@@ -10,7 +10,7 @@
         </button>
         <div v-if="error.length">
           <ul v-for="err in error" :key="err.id">
-            <span class="fnt-warning">{{ err }}</span>
+            <span class="fnt-error">{{ err }}</span>
           </ul>
         </div>
       </div>
@@ -39,8 +39,8 @@ export default {
       if (!this.email) {
         this.error.push('Email is required!')
       }
-      if (!this.message){
-        this.message.push('Message is required!')
+      if (!this.message) {
+        this.error.push('Message is required!')
       }
       console.log(this.email)
       console.log(this.message)
