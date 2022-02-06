@@ -20,9 +20,6 @@
           </div>
         </div>
       </div>
-      <div class="slider p1">
-        a
-      </div>
     </div>
   </div>
 </template>
@@ -68,27 +65,6 @@ $btn-hover: rgba(0,0,0, 0.7);
       }
     }
   }
-  .container-box{
-    width:100%;
-    min-height:200px;
-    display:flex;
-    flex-direction: row;
-    gap:5%;
-    .results{
-      width:70%;
-      .item{
-        margin-top:25px;
-        width:90%;
-        height:100px;
-        box-shadow: 2px 2px 6px grey;
-      }
-    }
-    .slider{
-      margin-top:25px;
-      width:25%;
-      height:100px;
-      box-shadow: 2px 2px 6px grey;
-    }
-  }
+
 }
 </style>
