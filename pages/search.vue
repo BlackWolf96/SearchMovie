@@ -2,6 +2,7 @@
   <div>
     <Navbar />
     <Search />
+    <Footer />
   </div>
 </template>
 

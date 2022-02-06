@@ -34,13 +34,7 @@ export default {
     return {
       search: null,
       error: [],
-      results: [
-        { img: '/static/ssd.png', title: 's', description: 's' },
-        { img: '~/static/w.jpg', title: 's', description: 's' },
-        { img: '~/static/w.jpg', title: 's', description: 's' },
-        { img: '~/static/w.jpg', title: 's', description: 's' },
-        { img: '~/static/w.jpg', title: 's', description: 's' }
-      ]
+      results: []
     }
   },
   methods: {
