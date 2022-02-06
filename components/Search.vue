@@ -2,17 +2,27 @@
   <div class="wrapper">
     <div class="container spacer">
       <input v-model="search" type="search" placeholder="Search,,,">
-      <button class="btn btn-black" @click="searchMethod">Search</button>
+      <button class="btn btn-black" @click="searchMethod">
+        Search
+      </button>
     </div>
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
         <div v-for="result in results" :key="result.id" class="item">
-          <div>{{ result.img }}</div>
-          <div>{{ result.title }}</div>
-          <div>{{ result.description }}</div>
+          <div>
+            {{ result.img }}
+          </div>
+          <div>
+            {{ result.title }}
+          </div>
+          <div>
+            {{ result.description }}
+          </div>
         </div>
       </div>
-      <div class="slider p1">d</div>
+      <div class="slider p1">
+        a
+      </div>
     </div>
   </div>
 </template>
@@ -34,10 +44,9 @@ export default {
     }
   },
   methods: {
-    searchMethod () {
-      console.log(this.search)
+    searchMethod (e) {
       this.error = []
-      if (!this.search){
+      if (!this.search) {
         this.error.push('This label cannot be empty')
       }
       e.preventDefault()
