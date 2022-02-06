@@ -5,6 +5,11 @@
       <button class="btn btn-black" @click="searchMethod">
         Search
       </button>
+      <div v-if="error.length">
+        <ul v-for="err in error" :key="err.id">
+          <li>{{ err }}</li>
+        </ul>
+      </div>
     </div>
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
@@ -25,6 +30,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'SearchComponent',
   data () {
