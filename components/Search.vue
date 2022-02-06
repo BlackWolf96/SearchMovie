@@ -36,7 +36,11 @@ export default {
   methods: {
     searchMethod () {
       console.log(this.search)
-      
+      this.error = []
+      if (!this.search){
+        this.error.push('This label cannot be empty')
+      }
+      e.preventDefault()
     }
   }
 }
