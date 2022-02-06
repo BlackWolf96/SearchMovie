@@ -26,7 +26,6 @@ myapp.get('/', (req, res) => {
 
 })
 myapp.post('/search', (req, res) => {
-  res.send('this is about')
 })
 myapp.get('/about', (req, res) => {
   res.send('this is about')
@@ -35,7 +34,6 @@ myapp.get('/about', (req, res) => {
   res.send('this is about')
 })
 myapp.post('/contact', (req, res) => {
-  res.send('this is about')
 })
 myapp.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
