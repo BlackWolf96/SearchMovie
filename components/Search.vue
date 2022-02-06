@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="container spacer">
-      <input v-model="search" type="search" name="" id="">
+      <input v-model="search" type="search" placeholder="Search,,,">
       <button @click="searchMethod" class="btn btn-black">Search</button>
     </div>
     <div v-if="results" class="container-box spacer">
@@ -23,6 +23,7 @@ export default {
   data () {
     return {
       search: null,
+      error: [],
       results: [
         { img: '/static/ssd.png', title: 's', description: 's' },
         { img: '~/static/w.jpg', title: 's', description: 's' },
@@ -35,6 +36,7 @@ export default {
   methods: {
     searchMethod () {
       console.log(this.search)
+      
     }
   }
 }
