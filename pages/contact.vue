@@ -42,6 +42,9 @@ export default {
       if (!this.message) {
         this.error.push('Message is required!')
       }
+      if (!this.error.length) {
+        return true
+      }
       e.preventDefault()
     }
   }
