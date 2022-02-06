@@ -42,8 +42,6 @@ export default {
       if (!this.message) {
         this.error.push('Message is required!')
       }
-      console.log(this.email)
-      console.log(this.message)
       e.preventDefault()
     }
   }
