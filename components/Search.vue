@@ -53,7 +53,6 @@ export default {
       e.preventDefault()
     },
     submitSearch () {
-      console.log('eo')
       axios.push('/search', {
         data: this.search
       })
