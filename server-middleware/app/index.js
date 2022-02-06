@@ -8,10 +8,6 @@ const connection = mysql.createConnection({
   database: process.env.database
 })
 
-console.error( process.env.host )
-console.error( process.env.user )
-console.error( process.env.password )
-console.error( process.env.database )
 const myapp = express()
 const port = 3001
 
