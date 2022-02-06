@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="container spacer">
       <input v-model="search" type="search" placeholder="Search,,,">
-      <button @click="searchMethod" class="btn btn-black">Search</button>
+      <button class="btn btn-black" @click="searchMethod">Search</button>
     </div>
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
