@@ -8,7 +8,11 @@
         <button class="btn btn-black" @click="sendMSG">
           Send
         </button>
-        <span v-if="error">{{ error }}</span>
+        <div v-if="error.length">
+          <ul v-for="err in error" :key="err.id">
+            <span class="fnt-warning">{{ err }}</span>
+          </ul>
+        </div>
       </div>
       <div class="item p2 justify">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem debitis praesentium cum quisquam non. Delectus ut ipsa esse. Error omnis suscipit voluptas assumenda quia natus tempore eveniet quam nemo perferendis quis impedit libero, nesciunt itaque accusantium repudiandae magnam cum aliquid iusto nihil velit dolor enim mollitia facilis. In, expedita dolores!
@@ -23,16 +27,23 @@ export default {
   name: 'ContactPage',
   data () {
     return {
-      email: '',
-      message: '',
-      error: ''
+      email: null,
+      message: null,
+      error: []
     }
   },
   methods: {
     sendMSG (e) {
+      this.error = []
+
+      if (!this.email) {
+        this.error.push('Email is required!')
+      }
+      if (!this.message){
+        this.message.push('Message is required!')
+      }
       console.log(this.email)
       console.log(this.message)
-      this.error = 'This message will be send'
       e.preventDefault()
     }
   }
