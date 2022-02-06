@@ -1,6 +1,5 @@
 <template>
   <footer>
-    Copyright &copy; 2022
   </footer>
 </template>
 
