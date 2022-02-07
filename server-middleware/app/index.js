@@ -1,3 +1,4 @@
+const { response } = require('express')
 const express = require('express')
 const mysql = require('mysql')
 
@@ -41,9 +42,9 @@ connection.query(`CREATE TABLE IF NOT EXISTS test (
   ) engine=INNODB
   `);
 connection.query('SELECT * from test', (error, results, fields) => {
-  if(results.length < 1){
-    test_data.forEach(item => {
-      connection.query(`INSERT INTO test (actress_name,movie_name,movie_poster) VALUES(${item.actress}, ${item.movie}, ${item.poster})`)
+  if( results.length < 1){
+    test_data.forEach((item) => {
+      connection.query(`INSERT INTO test (actress_name,movie_name,movie_poster) VALUES('${item.actress}', '${item.movie}', '${item.poster}')`)
     })
   }
 })
@@ -59,8 +60,10 @@ myapp.get('/', (req, res) => {
   res.send('this is about')
 })
 myapp.post('/search-post', (req, res) => {
-  console.log(req.body)
-  res.send(req.body)
+  connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (results) => {
+    res.send( JSON.stringify(results) )
+  })
+  console.log( req )
 })
 myapp.get('/about', (req, res) => {
   res.send('this is about')
