@@ -33,7 +33,7 @@ const test_data = Array(
   { 'actress': 'Stuart Townsend', 'movie': 'Liga niezwykłych dżentelmenów', 'poster': 'Not yet' }
 )
 
-connection.query(`CREATE TABLE IF NOT EXISTS test_table (
+connection.query(`CREATE TABLE IF NOT EXISTS test (
     id INT AUTO_INCREMENT PRIMARY KEY,
     actress_name VARCHAR( 255 ) NOT NULL, 
     movie_name VARCHAR( 120 ) NOT NULL, 
@@ -41,13 +41,11 @@ connection.query(`CREATE TABLE IF NOT EXISTS test_table (
   ) engine=INNODB
   `);
 connection.query('SELECT * from test', (error, results, fields) => {
-  /*
   if(results.length < 1){
     test_data.forEach(item => {
       connection.query(`INSERT INTO test (actress_name,movie_name,movie_poster) VALUES(${item.actress}, ${item.movie}, ${item.poster})`)
     })
   }
-  */
 })
 // END TEST TABLE
 myapp.get('/', (req, res) => {
