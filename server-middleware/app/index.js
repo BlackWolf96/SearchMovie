@@ -69,7 +69,8 @@ myapp.get('/about', (req, res) => {
   res.send('this is about')
 })
 myapp.post('/contact', (req, res) => {
+  // Nodemailer or database
 })
 myapp.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server is runing! Port: ${port}`)
 })
