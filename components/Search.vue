@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="container spacer">
       <input v-model="search" type="search" placeholder="Search,,,">
-      <button class="btn btn-black" @click="searchMethod" @submit="submitSearch">
+      <button class="btn btn-black" @click="submitSearch">
         Search
       </button>
       <div v-if="error.length">
@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    searchMethod (e) {
+    searchValidation (e) {
       this.error = []
       if (!this.search) {
         this.error.push('This label cannot be empty')
@@ -53,7 +53,10 @@ export default {
       e.preventDefault()
     },
     submitSearch () {
-      axios.push('/search', {
+      axios.post('http://127.0.0.1:3001/search', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
         data: this.search
       })
         .then((res) => {

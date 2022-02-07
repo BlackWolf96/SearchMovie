@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql')
 
+const cors = require('cors');
 const connection = mysql.createConnection({
   host    : process.env.host,
   user    : process.env.user,
@@ -10,7 +11,8 @@ const connection = mysql.createConnection({
 
 const myapp = express()
 const port = 3001
-
+myapp.use(express.json());
+myapp.use(cors({origin: true, credentials: true}));
 connection.connect();
 
 connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
@@ -29,7 +31,8 @@ myapp.get('/', (req, res) => {
   res.send('this is about')
 })
 myapp.post('/search', (req, res) => {
-  console.log(req)
+  console.log(req.body)
+  res.send(req.body)
 })
 myapp.get('/about', (req, res) => {
   res.send('this is about')
