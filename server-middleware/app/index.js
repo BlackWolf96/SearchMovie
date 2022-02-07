@@ -1,7 +1,6 @@
 const express = require('express')
 const mysql = require('mysql')
 
-const cors = require('cors');
 const connection = mysql.createConnection({
   host    : process.env.host,
   user    : process.env.user,
@@ -12,7 +11,13 @@ const connection = mysql.createConnection({
 const myapp = express()
 const port = 3001
 myapp.use(express.json());
-myapp.use(cors({origin: true, credentials: true}));
+myapp.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next()
+})
 connection.connect();
 
 connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
@@ -30,7 +35,7 @@ myapp.get('/', (req, res) => {
 myapp.get('/', (req, res) => {
   res.send('this is about')
 })
-myapp.post('/search', (req, res) => {
+myapp.post('/search-post', (req, res) => {
   console.log(req.body)
   res.send(req.body)
 })

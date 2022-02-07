@@ -52,12 +52,9 @@ export default {
       }
       e.preventDefault()
     },
-    submitSearch () {
-      axios.post('http://127.0.0.1:3001/search', {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: this.search
+    async submitSearch () {
+      await axios.post('http://127.0.0.1:3001/search-post', {
+        search: this.search
       })
         .then((res) => {
           console.log(res)
