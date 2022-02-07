@@ -25,14 +25,15 @@ myapp.get('/', (req, res) => {
   });
 
 })
+})
+myapp.get('/', (req, res) => {
+  res.send('this is about')
+})
 myapp.post('/search', (req, res) => {
 })
 myapp.get('/about', (req, res) => {
   res.send('this is about')
-})
-myapp.get('/about', (req, res) => {
-  res.send('this is about')
-})
+
 myapp.post('/contact', (req, res) => {
 })
 myapp.listen(port, () => {
