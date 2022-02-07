@@ -60,10 +60,10 @@ myapp.get('/', (req, res) => {
   res.send('this is about')
 })
 myapp.post('/search-post', (req, res) => {
-  connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (results) => {
-    res.send( JSON.stringify(results) )
+  connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
+    console.log(results )
+    res.send( results )
   })
-  console.log( req )
 })
 myapp.get('/about', (req, res) => {
   res.send('this is about')

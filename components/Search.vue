@@ -15,13 +15,13 @@
       <div class="results p1">
         <div v-for="result in results" :key="result.id" class="item">
           <div>
-            {{ result.img }}
+            {{ result.actress_name }}
           </div>
           <div>
-            {{ result.title }}
+            {{ result.movie_name }}
           </div>
           <div>
-            {{ result.description }}
+            {{ result.movie_poster }}
           </div>
         </div>
       </div>
@@ -58,6 +58,7 @@ export default {
       })
         .then((res) => {
           console.log(res)
+          this.results = res.data
         })
         .catch((err) => {
           console.log(err)
@@ -84,6 +85,14 @@ $btn-hover: rgba(0,0,0, 0.7);
       &:hover{
         outline: none;
       }
+    }
+  }
+  .container-box{
+    width:100%;
+    .item{
+      box-shadow: 1px 2px 6px grey;
+      width:90%;
+      height:150px;
     }
   }
 }
