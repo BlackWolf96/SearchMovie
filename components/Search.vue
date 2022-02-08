@@ -93,6 +93,12 @@ $btn-hover: rgba(0,0,0, 0.7);
       box-shadow: 1px 2px 6px grey;
       width:90%;
       height:150px;
+      display: flex;
+      flex-wrap: wrap;
+      .div-poster{
+        flex:2;
+        background-color: red;
+      }
     }
   }
 }
