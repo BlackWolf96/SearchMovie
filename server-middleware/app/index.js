@@ -55,8 +55,8 @@ const search_model = {
   search: new DetailedValue(String, {required: true, min: 6})
 }
 const contact_model = {
-  mail: new DetailedValue(String, {required: true, isEmail:true, min: 5} ),
-  msg: String
+  email: new DetailedValue(String, {required: true, isEmail:true, min: 5} ),
+  message: String
 }
 // END 
 myapp.post('/search-post', (req, res) => {
@@ -70,8 +70,15 @@ myapp.post('/search-post', (req, res) => {
   
 });
 myapp.post('/contact', (req, res) => {
+  console.log(Validator(req.body, contact_model))
   if(Validator(req.body, contact_model)){
-    connection.query(`INSERT INTO contact (email, message) VALUES('${req.body.email}','${req.body.message}'`)
+    connection.query(`INSERT INTO contact (email, message) VALUES('${req.body.email}','${req.body.message}')`, (error, results, fields) => {
+      if(error) throw error;
+      res.send(results)
+    })
+  }
+  else{
+    res.send('Sorry! Check your data and try again')
   }
 })
 myapp.listen(port, () => {

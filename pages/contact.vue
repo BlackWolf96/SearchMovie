@@ -5,7 +5,7 @@
       <div class="item display-column p2">
         <input v-model="email" class="input" type="email" placeholder="Email">
         <textarea v-model="message" placeholder="Message..." />
-        <button class="btn btn-black" @click="sendMSG">
+        <button class="btn btn-black" @click="sendMessage">
           Send
         </button>
         <div v-if="error.length">
@@ -50,6 +50,8 @@ export default {
       e.preventDefault()
     },
     async sendMessage () {
+      console.log(this.email)
+      console.log(this.message)
       await axios.post('http://127.0.0.1:3001/contact', {
         email: this.email,
         message: this.message
