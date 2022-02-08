@@ -54,6 +54,12 @@ export default {
         email: this.email,
         message: this.message
       })
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        }) 
     }
 
   }
