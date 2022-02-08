@@ -1,7 +1,6 @@
-const { response } = require('express')
-const e = require('express')
 const express = require('express')
 const mysql = require('mysql')
+const {Validator} = require("node-data-validator");
 
 const connection = mysql.createConnection({
   host    : process.env.host,
@@ -50,38 +49,18 @@ connection.query('SELECT * from test', (error, results, fields) => {
   }
 })
 // END TEST TABLE
-myapp.get('/', (req, res) => {
-  connection.query('SELECT * from movie', (error, results, fields) => {
-    console.log( results )
-    res.send(JSON.stringify(results))
-  });
 
-})
-myapp.get('/', (req, res) => {
-  res.send('this is about')
-})
+// Validation models
+const search_model = {
+  search: String
+}
+// END 
 myapp.post('/search-post', (req, res) => {
-  const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-  const status = true;
-
-  if(format.test(req.body.search)){
-    status = false;
-  }
-
-  if( status === true){
-    connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
-      if( results.length > 0){
-        res.send(result)
-      }
-      else{
-        res.send('Nie znaleziono aktora')
-      }
-    })
-  }
-})
-myapp.get('/about', (req, res) => {
-  res.send('this is about')
-})
+  console.warn(Validator(req.body.search, search_model))
+  connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
+    res.send(results)
+  })
+});
 myapp.post('/contact', (req, res) => {
   // Nodemailer or database
 })
