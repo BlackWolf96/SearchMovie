@@ -59,8 +59,8 @@ export default {
         search: this.search
       })
         .then((res) => {
+          this.error = []
           if (res.data == null) {
-            this.error = []
             this.error.push('There is no data about actress')
           } else {
             this.results = res.data

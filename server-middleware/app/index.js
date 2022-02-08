@@ -41,6 +41,12 @@ connection.query(`CREATE TABLE IF NOT EXISTS test (
     movie_poster VARCHAR( 200 ) NOT NULL 
   ) engine=INNODB
   `);
+connection.query(`CREATE TABLE IF NOT EXISTS contact (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR( 60 ) NOT NULL, 
+  message TEXT NOT NULL
+) engine=INNODB
+`);
 connection.query('SELECT * from test', (error, results, fields) => {
   if( results.length < 1){
     test_data.forEach((item) => {

@@ -57,7 +57,8 @@ export default {
         message: this.message
       })
         .then((res) => {
-          if(res.data == null) {
+          this.error = []
+          if (res.data == null) {
             this.error.push('Sorry! Check your data and try again.')
           }
         })
