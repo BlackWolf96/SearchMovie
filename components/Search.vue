@@ -103,7 +103,7 @@ $btn-hover: rgba(0,0,0, 0.7);
       flex-wrap: wrap;
       .div-poster{
         flex:2;
-        background-color: red;
+        img{ width:100%; height:250px;}
       }
       div{
         flex:6;
