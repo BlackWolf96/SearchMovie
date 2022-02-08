@@ -18,6 +18,10 @@ myapp.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, CREATE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Content-Security-Policy', "default-src 'self'")
+  res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
+  res.setHeader('X-XSS-Protection', '1; mode=block')
+  res.setHeader(' X-Content-Type-Options', 'nosniff')
   next()
 })
 
