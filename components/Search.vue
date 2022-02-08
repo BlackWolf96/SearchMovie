@@ -15,13 +15,13 @@
       <div class="results p1">
         <div v-for="result in results" :key="result.id" class="item">
           <div class="div-poster">
-            {{ result.actress_name }}
+            {{ result.movie_poster }}
           </div>
           <div>
             {{ result.movie_name }}
           </div>
           <div class="div-actress">
-            {{ result.movie_poster }}
+            {{ result.actress_name }}
           </div>
         </div>
       </div>
