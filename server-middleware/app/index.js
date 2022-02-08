@@ -78,7 +78,7 @@ myapp.post('/contact', (req, res) => {
     })
   }
   else{
-    res.send('Sorry! Check your data and try again')
+    res.send('null')
   }
 })
 myapp.listen(port, () => {
