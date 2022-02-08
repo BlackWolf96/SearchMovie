@@ -8,12 +8,13 @@ const connection = mysql.createConnection({
   password: process.env.password,
   database: process.env.database
 })
+
 const myapp = express()
 const port = 3001
 
 myapp.use(express.json());
 myapp.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Change ADDR 
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, CREATE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -65,10 +66,11 @@ const contact_model = {
   message: String
 }
 // END 
+
 myapp.post('/search-post', (req, res) => {
   if(Validator(req.body, search_model)){
     connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
-      res.send(results)
+      res.send(results) // Send correct msg
     })
   }else{
     res.send('null')
@@ -80,7 +82,7 @@ myapp.post('/contact', (req, res) => {
   if(Validator(req.body, contact_model)){
     connection.query(`INSERT INTO contact (email, message) VALUES('${req.body.email}','${req.body.message}')`, (error, results, fields) => {
       if(error) throw error;
-      res.send(results)
+      res.send(results) // Send correct add 
     })
   }
   else{
