@@ -70,11 +70,12 @@ const contact_model = {
   email: new DetailedValue(String, {required: true, isEmail:true, min: 5} ),
   message: String
 }
-// END 
+// END Validation models
 
 myapp.post('/search-post', (req, res) => {
   if(Validator(req.body, search_model)){
     connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
+      if(error) throw error;
       res.send(results) // Send correct msg
     })
   }else{
