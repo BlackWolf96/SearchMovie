@@ -54,6 +54,10 @@ connection.query('SELECT * from test', (error, results, fields) => {
 const search_model = {
   search: new DetailedValue(String, {required: true, min: 6})
 }
+const contact_model = {
+  mail: new DetailedValue(String, {required: true, isEmail:true, min: 5} ),
+  msg: String
+}
 // END 
 myapp.post('/search-post', (req, res) => {
   if(Validator(req.body, search_model)){
@@ -66,6 +70,9 @@ myapp.post('/search-post', (req, res) => {
   
 });
 myapp.post('/contact', (req, res) => {
+  if(Validator(req.body, contact_model)){
+    connection.query(`INSERT INTO contact (email, message) VALUES('${req.body.email}','${req.body.message}'`)
+  }
 })
 myapp.listen(port, () => {
   console.log(`Server is runing! Port: ${port}`)

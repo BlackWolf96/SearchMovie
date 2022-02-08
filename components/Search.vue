@@ -59,8 +59,12 @@ export default {
         search: this.search
       })
         .then((res) => {
-          console.log(res)
-          this.results = res.data
+          if (res.data == null) {
+            this.error = []
+            this.error.push('There is no data about actress')
+          } else {
+            this.results = res.data
+          }
         })
         .catch((err) => {
           console.log(err)
@@ -111,7 +115,6 @@ $btn-hover: rgba(0,0,0, 0.7);
         background-color: yellow;
       }
       }
-      
     }
   }
 }
