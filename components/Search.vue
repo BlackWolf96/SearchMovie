@@ -19,10 +19,10 @@
           </div>
           <div>
             <div class="div-movie">
-              {{ result.movie_name }}
+              <span class="fnt-bold">{{ result.movie_name }}</span>
             </div>
             <div class="div-actress">
-              {{ result.actress_name }}
+              <span class="fnt-bold">{{ result.actress_name }}</span>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ $btn-hover: rgba(0,0,0, 0.7);
         background-color: red;
       }
       div{
-        flex:3;
+        flex:6;
         .div-movie{
         }
         .div-actress{
