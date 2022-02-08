@@ -96,8 +96,8 @@ $btn-hover: rgba(0,0,0, 0.7);
   .container-box{
     width:100%;
     .item{
+      width:100%;
       box-shadow: 1px 2px 6px grey;
-      width:90%;
       height:250px;
       display: flex;
       flex-wrap: wrap;

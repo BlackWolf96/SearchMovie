@@ -29,10 +29,10 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 
 // TEST TABLE
 const test_data = Array(
-  { 'actress': 'Hugh Jackman', 'movie': 'Van Helsing', 'poster': 'Not yet' },
-  { 'actress': 'Kate Beckinsale', 'movie': 'Van Helsing', 'poster': 'Not yet' },
-  { 'actress': 'Sean Connery', 'movie': 'Liga niezwykłych dżentelmenów', 'poster': 'Not yet' },
-  { 'actress': 'Stuart Townsend', 'movie': 'Liga niezwykłych dżentelmenów', 'poster': 'Not yet' }
+  { 'actress': 'Hugh Jackman', 'movie': 'Van Helsing', 'poster': 'https://m.media-amazon.com/images/I/71DHEagosIL._AC_SY679_.jpg' },
+  { 'actress': 'Kate Beckinsale', 'movie': 'Van Helsing', 'poster': 'https://m.media-amazon.com/images/I/71DHEagosIL._AC_SY679_.jpg' },
+  { 'actress': 'Sean Connery', 'movie': 'Liga niezwykłych dżentelmenów', 'poster': 'https://i1.fdbimg.pl/x1/gn5zz9/900x1337_kd381d.jpg' },
+  { 'actress': 'Stuart Townsend', 'movie': 'Liga niezwykłych dżentelmenów', 'poster': 'https://i1.fdbimg.pl/x1/gn5zz9/900x1337_kd381d.jpg' }
 )
 
 connection.query(`CREATE TABLE IF NOT EXISTS test (
