@@ -1,0 +1,5 @@
+1. Fix html code 
+2. Move repetitive activites to global.scss
+3. Prepare correct tables in db 
+4. Fix cors and clear code 
+5. DONE
