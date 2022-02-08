@@ -14,13 +14,13 @@
     <div v-if="results" class="container-box spacer">
       <div class="results p1">
         <div v-for="result in results" :key="result.id" class="item">
-          <div>
+          <div class="div-poster">
             {{ result.actress_name }}
           </div>
           <div>
             {{ result.movie_name }}
           </div>
-          <div>
+          <div class="div-actress">
             {{ result.movie_poster }}
           </div>
         </div>
@@ -98,6 +98,10 @@ $btn-hover: rgba(0,0,0, 0.7);
       .div-poster{
         flex:2;
         background-color: red;
+      }
+      .div-actress{
+        flex:1;
+        background-color: yellow;
       }
     }
   }
