@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'ContactPage',
   data () {
@@ -46,7 +48,9 @@ export default {
         return true
       }
       e.preventDefault()
-    }
+    },
+    async sendMessage () {}
+    
   }
 }
 </script>
