@@ -49,8 +49,13 @@ export default {
       }
       e.preventDefault()
     },
-    async sendMessage () {}
-    
+    async sendMessage () {
+      await axios.post('http://127.0.0.1:3001/contact'. {
+        email: this.email,
+        message: this.message
+      })
+    }
+
   }
 }
 </script>
