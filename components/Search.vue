@@ -18,10 +18,10 @@
             {{ result.movie_poster }}
           </div>
           <div>
-            <div class="div-movie">
+            <div class="div-movie p2">
               <span class="fnt-bold">{{ result.movie_name }}</span>
             </div>
-            <div class="div-actress">
+            <div class="div-actress p2">
               <span class="fnt-bold">{{ result.actress_name }}</span>
             </div>
           </div>
@@ -107,7 +107,8 @@ $btn-hover: rgba(0,0,0, 0.7);
       }
       div{
         flex:6;
-        .div-movie{
+        .div-movie{flex:1;
+        background-color: yellow;
         }
         .div-actress{
         flex:1;
