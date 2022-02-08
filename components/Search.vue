@@ -15,7 +15,7 @@
       <div class="results p1">
         <div v-for="result in results" :key="result.id" class="item">
           <div class="div-poster">
-            {{ result.movie_poster }}
+            <img :src="result.movie_poster">
           </div>
           <div>
             <div class="div-movie p2">
