@@ -108,7 +108,6 @@ $btn-hover: rgba(0,0,0, 0.7);
       div{
         flex:3;
         .div-movie{
-
         }
         .div-actress{
         flex:1;

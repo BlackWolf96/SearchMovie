@@ -50,7 +50,7 @@ export default {
       e.preventDefault()
     },
     async sendMessage () {
-      await axios.post('http://127.0.0.1:3001/contact'. {
+      await axios.post('http://127.0.0.1:3001/contact', {
         email: this.email,
         message: this.message
       })
@@ -59,7 +59,7 @@ export default {
         })
         .catch((err) => {
           console.log(err)
-        }) 
+        })
     }
 
   }
