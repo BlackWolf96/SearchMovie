@@ -1,6 +1,6 @@
 const express = require('express')
 const mysql = require('mysql')
-const {Validator} = require("node-data-validator");
+const {Validator, DetailedValue} = require("node-data-validator");
 
 const connection = mysql.createConnection({
   host    : process.env.host,
@@ -52,17 +52,20 @@ connection.query('SELECT * from test', (error, results, fields) => {
 
 // Validation models
 const search_model = {
-  search: String
+  search: new DetailedValue(String, {required: true, min: 6})
 }
 // END 
 myapp.post('/search-post', (req, res) => {
-  console.warn(Validator(req.body.search, search_model))
-  connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
-    res.send(results)
-  })
+  if(Validator(req.body, search_model)){
+    connection.query(`SELECT * from test WHERE actress_name='${req.body.search}'`, (error, results, fields) => {
+      res.send(results)
+    })
+  }else{
+    res.send('null')
+  }
+  
 });
 myapp.post('/contact', (req, res) => {
-  // Nodemailer or database
 })
 myapp.listen(port, () => {
   console.log(`Server is runing! Port: ${port}`)
